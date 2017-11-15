@@ -1,0 +1,869 @@
+@import url("font-awesome/css/font-awesome.min.css");
+@import url("micons/micons.css");
+@import url("fonts.css");
+
+
+/* ===================================================================
+ *  02. base style overrides - (_document-setup)
+ *
+ * ------------------------------------------------------------------- */
+html {
+  font-size: 10px;
+}
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 9.375px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 9.375px;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #111111;
+  font-family: "librebaskerville-regular", serif;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  color: #353535;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------- 
+ * links - (_document-setup) 
+ * ------------------------------------------------------------------- */
+a, a:visited {
+  color: #07617d;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover, a:focus {
+  color: #000000;
+}
+
+
+/* ===================================================================
+ *  03. typography & general theme styles - (_document-setup.scss) 
+ *
+ * ------------------------------------------------------------------- */
+h1, h2, h3, h4, 
+.h01, .h02, .h03, .h04 {
+  font-family: 'Dosis', sans-serif;
+  color: #443f3fad;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 2.1rem;
+}
+
+h3, .h03, h4, .h04 {
+  margin-bottom: 1.8rem;
+}
+
+h5, .h05, h6, .h06 {
+  margin-bottom: 1.2rem;
+}
+
+h1, .h01 {
+  font-size: 3.1rem;
+  line-height: 1.35;
+  letter-spacing: -.1rem;
+}
+@media only screen and (max-width: 600px) {
+  h1, .h01 {
+    font-size: 2.6rem;
+    letter-spacing: -.07rem;
+  }
+}
+
+h2, .h02 {
+  font-size: 2.4rem;
+  line-height: 1.25;
+}
+
+h3, .h03 {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+h4, .h04 {
+  font-size: 1.7rem;
+  line-height: 1.76;
+}
+
+h5, .h05 {
+  font-size: 1.9rem;
+  line-height: 1.7;
+  letter-spacing: .2rem;
+  font-family: 'Antic Slab', serif;
+  color: #070101d0;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 2.1rem;
+}
+
+h6, .h06 {
+  font-size: 1.3rem;
+  line-height: 1.85;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+p img {
+  margin: 0;
+}
+
+p.lead {
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 2rem;
+  line-height: 1.8;
+  color: #4f4f4f;
+  margin-bottom: 3.6rem;
+}
+@media only screen and (max-width: 768px) {
+  p.lead {
+    font-size: 1.8rem;
+  }
+}
+
+em, i, strong, b {
+  font-size: 1.6rem;
+  line-height: 3rem;
+  font-style: normal;
+  font-weight: normal;
+}
+
+em, i {
+  font-family: "librebaskerville-italic", serif;
+}
+
+strong, b {
+  font-family: "librebaskerville-bold", serif;
+}
+
+small {
+  font-size: 1.1rem;
+  line-height: inherit;
+}
+abbr {
+  font-family: "librebaskerville-bold", serif;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: .05rem;
+  color: #4f4f4f;
+}
+
+var, kbd, samp, code, pre {
+  font-family: Consolas, "Andale Mono", Courier, "Courier New", monospace;
+}
+
+pre {
+  padding: 2.4rem 3rem 3rem;
+  background: #F1F1F1;
+}
+
+
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+mark {
+  background: #FFF49B;
+  color: #000;
+}
+
+hr {
+  border: solid #d2d2d2;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 2.4rem 0 1.5rem;
+  height: 0;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0F1215;
+  z-index: 800;
+  height: 100%;
+  width: 100%;
+}
+
+.no-js #preloader, .oldie #preloader {
+  display: none;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  padding: 0;
+  background-color: #f9a828;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+::-webkit-input-placeholder {
+  color: #8e8e8e;
+}
+
+:-moz-placeholder {
+  color: #8e8e8e;
+  /* Firefox 18- */
+}
+
+::-moz-placeholder {
+  color: #8e8e8e;
+  /* Firefox 19+ */
+}
+
+:-ms-input-placeholder {
+  color: #8e8e8e;
+}
+
+.placeholder {
+  color: #8e8e8e !important;
+}
+
+
+/* ===================================================================
+ *  06. buttons - (_button-essentials.scss)
+ *
+ * ------------------------------------------------------------------- */
+.button,
+a.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  font-family: "montserrat-bold", sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  height: 5.4rem;
+  line-height: 5.4rem;
+  padding: 0 3rem;
+  margin: 0 .3rem 1.2rem 0;
+  background: #A5A5A5;
+  color: #222222;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  border: none;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover,
+a.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  background: #989898;
+  color: #000000;
+  outline: 0;
+}
+
+.button.button-primary,
+a.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  background: #151515;
+  color: #FFFFFF;
+}
+
+.button.button-primary:hover,
+a.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  background: #030303;
+}
+
+button.full-width, .button.full-width {
+  width: 100%;
+  margin-right: 0;
+}
+
+button.medium, .button.medium {
+  height: 5.7rem !important;
+  line-height: 5.7rem !important;
+  padding: 0 1.8rem !important;
+}
+
+button.large, .button.large {
+  height: 6rem !important;
+  line-height: 6rem !important;
+  padding: 0rem 3rem !important;
+}
+
+button.stroke, .button.stroke {
+  background: transparent !important;
+  border: 3px solid #313131;
+  line-height: 4.8rem;
+}
+
+button.stroke.medium, .button.stroke.medium {
+  line-height: 5.1rem !important;
+}
+
+button.stroke.large, .button.stroke.large {
+  line-height: 5.4rem !important;
+}
+
+button.stroke:hover, .button.stroke:hover {
+  border: 3px solid #f9a828;
+  color: #f9a828;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+
+/* ===================================================================
+ *  08. common and reusable styles 
+ *
+ * ------------------------------------------------------------------- */
+.section-intro {
+  text-align: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.section-intro h1 {
+  font-family: "librebaskerville-bold", serif;
+  font-size: 4.8rem;
+  line-height: 1.375;
+  color: #151515;
+}
+.section-intro h3 {
+  font-family: "montserrat-bold", sans-serif;
+  font-size: 1.8 rem;
+  line-height: 1.667;
+  color: rgba(242, 242, 242, 0.5);
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  margin-bottom: 1.2rem;
+}
+.section-intro .lead {
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 1.8;
+  line-height: 1.833;
+}
+.section-intro.with-bottom-sep {
+  padding-bottom: 4.2rem;
+  position: relative;
+}
+.section-intro.with-bottom-sep::after {
+  display: inline-block;
+  height: 1px;
+  width: 200px;
+  background-color: rgba(242, 242, 242, 0.1);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * section-intro
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width: 1024px) {
+  .section-intro h1 {
+    font-size: 4.4rem;
+  }
+  .section-intro .lead {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section-intro h1 {
+    font-size: 4rem;
+  }
+  .section-intro h3 {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .section-intro h1 {
+    font-size: 3.4rem;
+  }
+  .section-intro h3 {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .section-intro h3 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .section-intro h1 {
+    font-size: 3.1rem;
+  }
+}
+.wide {
+  max-width: 1300px;
+}
+
+.narrow {
+  max-width: 800px;
+}
+
+.js .animate-this, .js .animate-intro {
+  opacity: 0;
+}
+
+.oldie .animate-this,
+.oldie .animate-intro
+.no-cssanimations .animate-this,
+.no-cssanimations .animate-intro {
+  opacity: 1;
+}
+
+
+/* ===================================================================
+ *  09. header styles - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- */
+header {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 700;
+}
+header .row {
+  height: auto;
+  max-width: 1300px;
+  position: relative;
+}
+/* ===================================================================
+ *  10. home - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- */
+#home {
+  width: 100%;
+  height: 100%;
+  background-color: #151515;
+  background-image: url(../images/services-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 804px;
+  position: relative;
+}
+#home .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .2;
+  background-color: #19191b;
+}
+
+.home-content-table {
+  width: 100%;
+  height: 100%;
+  display: table;
+  position: relative;
+  text-align: center;
+}
+
+.home-content-tablecell {
+  display: table-cell;
+  vertical-align: middle;
+  z-index: 500;
+}
+.home-content-tablecell .row {
+  position: relative;
+  padding-top: 16.2rem;
+  padding-bottom: 15rem;
+}
+.home-content-tablecell h3 {
+  font-family: "montserrat-bold", sans-serif;
+  font-size: 2.2rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  margin: 0 0 .9rem 0;
+}
+.home-content-tablecell h1 {
+  font-family: "montserrat-bold", serif;
+  font-size: 9rem;
+  line-height: 1.133;
+  color: #FFFFFF;
+}
+.home-content-tablecell .more {
+  margin: 4.8rem 0 0 0;
+}
+.home-content-tablecell .more .button {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+/* home social-list */
+.home-social-list {
+  position: absolute;
+  left: 48px;
+  bottom: 54px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 2.4rem;
+  line-height: 1.75;
+  text-align: center;
+}
+.home-social-list::before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
+}
+.home-social-list li {
+  padding-left: 0;
+}
+.home-social-list li a, .home-social-list li a:visited {
+  color: #FFFFFF;
+}
+.home-social-list li a:hover, 
+.home-social-list li a:focus, 
+.home-social-list li a:active {
+  color: #151515;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * home section 
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width: 1200px) {
+  .home-content-tablecell h3 {
+    font-size: 2.1rem;
+  }
+  .home-content-tablecell h1 {
+    font-size: 7rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .home-content-tablecell h3 {
+    font-size: 2rem;
+  }
+  .home-content-tablecell h1 {
+    font-size: 6rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .home-content-tablecell .row {
+    max-width: 600px;
+  }
+  .home-content-tablecell h3 {
+    font-size: 1.8rem;
+  }
+  .home-content-tablecell h1 {
+    font-size: 5.2rem;
+  }
+  .home-content-tablecell h1 br {
+    display: none;
+  }
+
+  .home-social-list {
+    left: 36px;
+    bottom: 30px;
+    font-size: 2.1rem;
+  }
+  .home-social-list::before {
+    height: 30px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #home {
+    min-height: 702px;
+  }
+
+  .home-content-tablecell .row {
+    max-width: 480px;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  .home-content-tablecell h3 {
+    font-size: 1.7rem;
+  }
+  .home-content-tablecell h1 {
+    font-size: 4.8rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .home-content-tablecell .row {
+    max-width: 420px;
+  }
+  .home-content-tablecell h3 {
+    font-size: 1.5rem;
+  }
+  .home-content-tablecell h1 {
+    font-size: 4.2rem;
+  }
+
+  .home-social-list {
+    left: 30px;
+    bottom: 30px;
+    font-size: 1.8rem;
+  }
+  .home-social-list::before {
+    height: 24px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #home {
+    min-height: 654px;
+  }
+
+  .home-content-tablecell .row {
+    padding-top: 4.8rem;
+    padding-bottom: 10.8rem;
+  }
+  .home-content-tablecell h3 {
+    font-size: 1.4rem;
+  }
+  .home-content-tablecell h1 {
+    font-size: 3.6rem;
+  }
+}
+
+  #About{
+    width: 100%;
+    height: 100%;
+    background-color: #beb7b711;
+    background-image: url(../images/architecture.jpg);
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 804px;
+    position: relative;
+  }
+/* --------------------------------------------------------------- 
+ * loader animation - (_layout.scss)
+ * --------------------------------------------------------------- */
+.s-loader {
+  margin: 1.2rem auto 3rem;
+  width: 70px;
+  text-align: center;
+  -webkit-transform: translateX(0.45rem);
+  -ms-transform: translateX(0.45rem);
+  transform: translateX(0.45rem);
+}
+
+.s-loader > div {
+  width: 9px;
+  height: 9px;
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: .9rem;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.s-loader .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.s-loader .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* ===================================================================
+ *  17. footer - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- */
+footer {
+  margin: 0 0 5.4rem 0;
+  padding: 0;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+footer a, footer a:visited {
+  color: #FFFFFF;
+}
+footer a:hover, footer a:focus {
+  color: #f9a828;
+}
+footer .row {
+  max-width: 1024px;
+}
+footer h4.h05 {
+  color: #FFFFFF;
+  position: relative;
+  padding-bottom: 4.2rem;
+  margin-bottom: 3.6rem;
+}
+footer h4.h05::after {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: rgba(233, 35, 35, 0.1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* footer bottom
+ * --------------------------------- */
+.footer-bottom {
+  margin-top: 3rem;
+  text-align: center;
+  font-family: "montserrat-regular", sans-serif;
+  font-size: 1.4rem;
+}
+.footer-bottom .copyright span {
+  display: inline-block;
+}
+.footer-bottom .copyright span::after {
+  content: "|";
+  display: inline-block;
+  padding: 0 1rem 0 1.2rem;
+  color: rgba(255, 255, 255, 0.1);
+}
+.footer-bottom .copyright span:last-child::after {
+  display: none;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * footer
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width: 768px) {
+  .footer-main {
+    text-align: center;
+  }
+  .footer-main .row {
+    max-width: 480px;
+  }
+  .footer-main [class*="col-"] {
+    margin-bottom: 3.6rem;
+  }
+
+  footer h4.h05 {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  footer h4.h05::after {
+    left: 50%;
+    margin-left: -50px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer-bottom {
+    padding-bottom: .6rem;
+  }
+  .footer-bottom .copyright span {
+    display: block;
+  }
+  .footer-bottom .copyright span::after {
+    display: none;
+  }
+}

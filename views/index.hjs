@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="images/ico.png"
+        <meta charset="utf-8">
+        <meta name="description" content="Mini Bot for electricity notification">
+        <meta name="author" content="Owerri Tech Group">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>UpNepa Bot </title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section id="home">
+               <div class="overlay"></div>
+               <div class="home-content-table">
+                   <div class="home-content-tablecell">
+                       <div class="row">
+                           <div class="col-twelve">
+                            <img src="images/ot.png"/><br>
+                                      <h1 class="animate-intro">
+                                    #ThereIsLight  <br>
+                                    #IsThereLight
+                                      </h1>
+                                      <div class="more animate-intro">
+                                          <a class="smoothscroll button stroke" href="#">
+                                              Chat on Messenger
+                                          </a>
+                                      </div>
+                              </div>
+                       </div>
+                   </div>
+                </div>
+                <ul class="home-social-list">
+                  <li class="animate-intro">
+                        <a href="#"><i class="fa fa-facebook-square"></i></a>
+                  </li>
+                  <li class="animate-intro">
+                        <a href="www.twitter.com/OwerriTG"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li class="animate-intro">
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                  </li>
+               </ul>
+           </section>
+           <section id="About">
+            <div class="overlay"></div>
+            <div class="home-content-table">
+                <div class="home-content-tablecell">
+                    <div class="row">
+                        <div class="col-twelve">
+                                   <h1 class="animate-intro">About UpNepa Bot</h1>
+                                   <style>
+@import url('https://fonts.googleapis.com/css?family=Antic+Slab');
+</style>
+                                   <h5 class="animate-intro">
+                                 #UpNepa Bot is an idea born out of the desire by developers in Owerri to help fellow Developers manage the problematic power situation in the Nigerian Developer community. <br>
+                                 with the #UpNepa Bot, users need only use the hashtag #UpNepa to indicate that there is light in their area, or #IsThereLight to query the Bot for information on light in their area. Simply go on messenger and type #UpNepa in the search bar to get started.
+                                   </h5>
+                           </div>
+                    </div>
+                </div>
+             </div>
+
+        </section>
+</body>
+<div class="footer-bottom">
+                  <div class="row">
+                      <div class="col-twelve">
+                          <div class="copyright">
+                             <span>? Copyright Owerri Tech Group</span>
+                             <span>Design by Owerri Tech Group</span>
+                         </div>
+                      </div>
+                  </div>
+              </div>
+</html>
