@@ -4,14 +4,22 @@
 const
     express = require('express'),
     bodyParser = require('body-parser'),
-    app = express().use(bodyParser.json()); // creates express http server
+    path = require('path'),
+    app = express(), // creates express http server
+    router = express.Router();
+
+
+// add body parser
+app.use(bodyParser.json());
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hjs');
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 
-
-var router = express.Router();
 
 // /* GET home page. */
 // router.get('/', function(req, res, next) {
