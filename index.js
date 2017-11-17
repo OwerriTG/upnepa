@@ -5,7 +5,8 @@ const
     express = require('express'),
     bodyParser = require('body-parser'),
     path = require('path'),
-    app = express(), // creates express http server
+    methods = require('./app'),
+    app = express(),
     router = express.Router();
 
 
@@ -13,6 +14,7 @@ const
 app.use(bodyParser.json());
 
 // view engine setup
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 
@@ -28,7 +30,8 @@ app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 /* GET home page. */
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Express' });
+    // res.render('index', { title: 'Express' });
+    res.sendFile(path.join(__dirname+'/views/index.html'));
 })
 
 
@@ -47,6 +50,19 @@ app.post('/webhook', (req, res) => {
             // will only ever contain one message, so we get index 0
             let webhookEvent = entry.messaging[0];
             console.log(webhookEvent);
+
+            // Get the sender PSID
+            let senderPSID = webhookEvent.sender.id;
+            console.log('Sender PSID: ' + senderPSID);
+
+            // Check if the event is a message or postback and
+            // pass the event to the appropriate handler function
+            if (webhookEvent.message) {
+                methods.handleMessage(senderPSID, webhookEvent.message);
+            } else if (webhook_event.postback) {
+                methods.handlePostback(senderPSID, webhookEvent.postback);
+            }
+
         });
 
         // Returns a '200 OK' response to all requests
