@@ -2,7 +2,7 @@
 
 // Imports dependencies and set up http server
 const
-    http = require('http');
+    request = require('request');
 
 const PAGE_ACCESS_TOKEN = 'EAAFSLILNs0QBAMmeZCwCX2CidxlSUdxO0dcYDvepIuPDHMjZCE5MnYVBwB4sDQDvQ1mWDD4w5e788aq2BZBLAz3iDzwh16FEr8YMQ7yvVoZApAAFHSIg4NNqM4aZCKmZC0DCGlPjEgQowL4NEwEilkfOyqii2grIXkEiAbP6h5ppzomNGBVjGVBpJIaWiPDNIZD'
 
@@ -17,11 +17,11 @@ function callSendAPI (sender_psid, response) {
     }
 
     // Send the HTTP request to the Messenger Platform
-    http.request({
-        "uri": "https://graph.facebook.com/v2.6/me/messages",
-        "qs": { "access_token": PAGE_ACCESS_TOKEN },
-        "method": "POST",
-        "json": request_body
+    request({
+        url: "https://graph.facebook.com/v2.6/me/messages",
+        qs: { access_token: PAGE_ACCESS_TOKEN },
+        method: "POST",
+        json: request_body
     }, (err, res, body) => {
         if (!err) {
             console.log('message sent!')
