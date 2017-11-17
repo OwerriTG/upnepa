@@ -50,10 +50,10 @@ module.exports = {
                 text: 'Thanks for messaging us. \n' +
                 '\n' +
                 'To indicate light please use: \n' +
-                '"upnepa [place]" e.g "upnapa worldbank" \n' +
+                'upnepa [place] e.g upnapa worldbank \n' +
                 '\n' +
                 'To ask about light please use: \n' +
-                '"[place]" e.g "worldbank"'
+                '[place] e.g worldbank'
             }
         }
 
