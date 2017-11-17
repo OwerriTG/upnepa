@@ -39,7 +39,7 @@ module.exports = function (message) {
     if (message.indexOf("upnepa") !== -1) {
 
         // Remove upnepa and save location
-        return save(message.substr( message.indexOf("upnepa") + 6, message.length ))
+        return save(message.substr( message.indexOf("upnepa") + 7, message.length ))
     } else {
 
         // find saved location
