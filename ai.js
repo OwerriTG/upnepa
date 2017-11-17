@@ -27,7 +27,7 @@ function save(data){
 
     console.log('saving')
     cache.set(data, new Date().toTimeString().substr(0, 5));
-    return 'Thank you'
+    return 'Thank you upnepa at' + data + ' by ' + cache.get(data)
 }
 
 module.exports = function (message) {
