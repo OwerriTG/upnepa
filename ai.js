@@ -6,7 +6,7 @@ function save(data){
 
     console.log('saving')
     cache.setKey(data, { time: new Date().toTimeString().substr(0, 5)} );
-    cache.save();
+    cache.save(true);
     return 'Thank you upnepa at' + data + ' by ' + cache.getKey(data).time
 }
 
@@ -22,6 +22,8 @@ function find(data){
             'To ask about light please use: \n' +
             '[place] e.g worldbank'
     }
+
+    console.log(cache.all())
 
     if (cache.getKey(data)) {
 
