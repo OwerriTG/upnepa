@@ -6,6 +6,7 @@ function save(data){
 
     console.log('saving')
     cache.setKey(data, { time: new Date().toTimeString().substr(0, 5)} );
+    cache.save();
     return 'Thank you upnepa at' + data + ' by ' + cache.getKey(data).time
 }
 
