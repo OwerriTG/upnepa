@@ -1,6 +1,13 @@
 const
-    MapCache = require('map-cache'),
-    cache = new MapCache();
+    MapCache = require('flat-cache'),
+    cache = flatCache.load('PLACETIME');
+
+function save(data){
+
+    console.log('saving')
+    cache.setKey(data, new Date().toTimeString().substr(0, 5));
+    return 'Thank you upnepa at' + data + ' by ' + cache.getKey(data)
+}
 
 function find(data){
 
@@ -21,13 +28,6 @@ function find(data){
     }
 
     return 'Cant find ' + data + ' entry'
-}
-
-function save(data){
-
-    console.log('saving')
-    cache.set(data, new Date().toTimeString().substr(0, 5));
-    return 'Thank you upnepa at' + data + ' by ' + cache.get(data)
 }
 
 module.exports = function (message) {

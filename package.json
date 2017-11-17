@@ -14,8 +14,8 @@
     "babel-preset-es2015": "^6.24.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "flat-cache": "^1.3.0",
     "hjs": "0.0.6",
-    "map-cache": "^0.2.2",
     "request": "^2.83.0"
   }
 }
