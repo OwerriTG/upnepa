@@ -28,7 +28,7 @@ function find(data){
         return 'There was light at ' + data + ' by ' + cache.getKey(data).time
     }
 
-    return 'Cant find ' + data + ' entry'
+    return 'No record for' + data
 }
 
 module.exports = function (message) {
