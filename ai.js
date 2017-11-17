@@ -1,6 +1,6 @@
 const
     MapCache = require('flat-cache'),
-    cache = flatCache.load('cacheId');
+    cache = MapCache.load('cacheId');
 
 function save(data){
 
