@@ -15,7 +15,7 @@ function save(data){
 module.exports = function (message) {
 
     // Check if the message contains upnepa
-    if (message.indexOf("upnepa")) {
+    if (message.indexOf("upnepa") !== -1) {
 
         // Remove upnepa and save location
         return save(message.substr( message.indexOf("upnepa") + 6, message.length ))
