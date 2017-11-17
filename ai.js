@@ -4,7 +4,7 @@ const
 function find(data){
 
     // Check if the message contains help
-    if (message.indexOf("help") !== -1) {
+    if (data.indexOf("help") !== -1) {
         return 'Thanks for messaging us. \n' +
             '\n' +
             'To indicate light please use: \n' +
