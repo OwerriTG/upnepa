@@ -4,10 +4,11 @@ const
 
 function save(data){
 
-    console.log('saving')
+    //Set place as key and save
     cache.setKey(data, { time: new Date().toTimeString().substr(0, 5)} );
     cache.save(true);
-    return 'Thank you upnepa at' + data + ' by ' + cache.getKey(data).time
+
+    return 'Upnepa ' + data + ' ' + cache.getKey(data).time + '. Thank you.'
 }
 
 function find(data){
@@ -23,10 +24,7 @@ function find(data){
             '[place] e.g worldbank'
     }
 
-    console.log(cache.all())
-
     if (cache.getKey(data)) {
-
         return 'There was light at ' + data + ' by ' + cache.getKey(data).time
     }
 
