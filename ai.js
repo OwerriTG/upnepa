@@ -11,21 +11,21 @@ function save(data){
 
 function find(data){
 
-    // // Check if the message contains help
-    // if (data.indexOf("help") !== -1) {
-    //     return 'Thanks for messaging us. \n' +
-    //         '\n' +
-    //         'To indicate light please use: \n' +
-    //         'upnepa [place] e.g upnapa worldbank \n' +
-    //         '\n' +
-    //         'To ask about light please use: \n' +
-    //         '[place] e.g worldbank'
-    // }
-    //
-    // if (cache.getKey(data)) {
-    //
-    //     return 'There was light at ' + data + ' by ' + cache.get(data)
-    // }
+    // Check if the message contains help
+    if (data.indexOf("help") !== -1) {
+        return 'Thanks for messaging us. \n' +
+            '\n' +
+            'To indicate light please use: \n' +
+            'upnepa [place] e.g upnapa worldbank \n' +
+            '\n' +
+            'To ask about light please use: \n' +
+            '[place] e.g worldbank'
+    }
+
+    if (cache.getKey(data)) {
+
+        return 'There was light at ' + data + ' by ' + cache.getKey(data).time
+    }
 
     return 'Cant find ' + data + ' entry'
 }
