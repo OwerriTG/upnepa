@@ -15,7 +15,7 @@ function find(data){
             '[place] e.g worldbank'
     }
 
-    if (cache.has(data)) {
+    if (cache.get(data)) {
 
         return 'There was light at ' + data + ' by ' + cache.get(data)
     }
