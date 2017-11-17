@@ -2,7 +2,8 @@
 
 // Imports dependencies and set up http server
 const
-    request = require('request');
+    request = require('request'),
+    ai = require('./ai');
 
 const PAGE_ACCESS_TOKEN = 'EAAFSLILNs0QBAMmeZCwCX2CidxlSUdxO0dcYDvepIuPDHMjZCE5MnYVBwB4sDQDvQ1mWDD4w5e788aq2BZBLAz3iDzwh16FEr8YMQ7yvVoZApAAFHSIg4NNqM4aZCKmZC0DCGlPjEgQowL4NEwEilkfOyqii2grIXkEiAbP6h5ppzomNGBVjGVBpJIaWiPDNIZD'
 
@@ -42,7 +43,17 @@ module.exports = {
 
             // Create the payload for a basic text message
             response = {
-                "text": `You sent the message: "${received_message.text}". Now send me an image!`
+                text: ai(received_message.text)
+            }
+        } else {
+            response = {
+                text: 'Thanks for messaging us. \n' +
+                '\n' +
+                'To indicate light please use: \n' +
+                '"upnepa [place]" e.g "upnapa worldbank" \n' +
+                '\n' +
+                'To ask about light please use: \n' +
+                '"[place]" e.g "worldbank"'
             }
         }
 
