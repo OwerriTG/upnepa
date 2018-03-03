@@ -134,6 +134,9 @@ p.lead {
   color: #4f4f4f;
   margin-bottom: 3.6rem;
 }
+#foot{
+  color: #ffffff;
+}
 @media only screen and (max-width: 768px) {
   p.lead {
     font-size: 1.8rem;

@@ -23,7 +23,7 @@
                                     #IsThereLight
                                       </h1>
                                       <div class="more animate-intro">
-                                          <a class="smoothscroll button stroke" href="#">
+                                          <a class="smoothscroll button stroke" href="https://web.facebook.com/messages/t/UpNepas">
                                               Chat on Messenger
                                           </a>
                                       </div>
@@ -68,8 +68,8 @@
                   <div class="row">
                       <div class="col-twelve">
                           <div class="copyright">
-                             <span>? Copyright Owerri Tech Group</span>
-                             <span>Design by Owerri Tech Group</span>
+                             <span id="foot">? Copyright Owerri Tech Group</span>
+                             <span id="foot">Design by Owerri Tech Group</span>
                          </div>
                       </div>
                   </div>
